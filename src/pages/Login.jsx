@@ -1,7 +1,8 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import Loading from '../components/Loading';
+import LoadingMusic from '../components/LoadingMusic';
 import { createUser } from '../services/userAPI';
+import '../Styles/Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -39,35 +40,40 @@ class Login extends React.Component {
   render() {
     const { buttonLoginIsDisabled, name, loading } = this.state;
     return (
-      <div data-testid="page-login">
+      <div className="login-container" data-testid="page-login">
         {loading === 'false' ? (
-          <div>
-            <h1>Preencha os dados de login</h1>
+          <div className="card-login">
+            <div className="image-container">
+              <img className="login-image" src="/login.svg" alt="login ilustration" />
+            </div>
             <form>
+              <h1>Login</h1>
               <label htmlFor="name">
                 <input
+                  autoComplete="off"
                   data-testid="login-name-input"
                   type="text"
                   name="name"
                   id="name"
-                  onChange={ this.onInputChange }
-                  value={ name }
+                  onChange={this.onInputChange}
+                  value={name}
                 />
               </label>
               <button
+                className="btn"
                 type="submit"
                 data-testid="login-submit-button"
-                disabled={ buttonLoginIsDisabled }
-                onClick={ this.onClickLogin }
+                disabled={buttonLoginIsDisabled}
+                onClick={this.onClickLogin}
               >
                 Entrar
               </button>
             </form>
           </div>
         ) : (
-          <div>
+          <div className="loading-music">
             {loading === 'loading' ? (
-              <Loading />
+              <LoadingMusic />
             ) : (
               <Redirect to="/search" />
             )}

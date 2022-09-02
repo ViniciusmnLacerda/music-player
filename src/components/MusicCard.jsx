@@ -1,7 +1,8 @@
-import React from 'react';
+/* eslint-disable consistent-return */
 import PropTypes from 'prop-types';
-import Loading from './Loading';
+import React from 'react';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import Loading from './Loading';
 
 class MusicCard extends React.Component {
   constructor() {
@@ -43,30 +44,32 @@ class MusicCard extends React.Component {
     const { musics } = this.props;
     const { loading, favorites } = this.state;
     return (
-      <div>
+      <div className="musics-container">
         {loading ? (
           <Loading />
         ) : (
-          <ul>
+          <ul className="tracklist">
             {musics.map((music) => {
               const { trackName, trackId, previewUrl } = music;
               return (
-                <li key={ trackId }>
-                  <p>{ trackName }</p>
-                  <audio data-testid="audio-component" src={ previewUrl } controls>
+                <li className="track" key={trackId}>
+                  <div className="track-name">
+                    <p>{ trackName }</p>
+                  </div>
+                  <audio data-testid="audio-component" src={previewUrl} controls>
                     <track kind="captions" />
                     O seu navegador não suporta o elemento
                     <code>audio</code>
                   </audio>
                   <label htmlFor="isFavorite">
-                    Favorita
                     <input
-                      data-testid={ `checkbox-music-${trackId}` }
+                      className="track-input"
+                      data-testid={`checkbox-music-${trackId}`}
                       type="checkbox"
                       name="isFavorite"
                       id="isFavorite"
-                      checked={ favorites.some((song) => song.trackId === trackId) }
-                      onChange={ () => this.onClickCheckbox(music) }
+                      checked={favorites.some((song) => song.trackId === trackId)}
+                      onChange={() => this.onClickCheckbox(music)}
                     />
                   </label>
                 </li>

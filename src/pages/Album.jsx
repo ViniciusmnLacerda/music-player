@@ -1,9 +1,10 @@
-import React from 'react';
 import propTypes from 'prop-types';
+import React from 'react';
 import Header from '../components/Header';
-import getMusics from '../services/musicsAPI';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
+import getMusics from '../services/musicsAPI';
+import '../Styles/Album.css';
 
 class Album extends React.Component {
   constructor() {
@@ -27,29 +28,29 @@ class Album extends React.Component {
     const { loading, album } = this.state;
     const artistInfo = album[0];
     const musics = album.filter((_, index) => index > 0);
-    console.log(musics);
+    const { match } = this.props;
     return (
-      <div data-testid="page-album">
-        <Header />
+      <div className="page-album" data-testid="page-album">
+        <Header path={match.url} />
         {loading ? (
           <Loading />
         ) : (
-          <div>
-            <div>
-              <img
-                src={ artistInfo.artworkUrl100 }
-                alt={ artistInfo.collectionName }
-              />
-              <div>
-                <p data-testid="album-name">{ artistInfo.collectionName }</p>
-                <p data-testid="artist-name">{ artistInfo.artistName }</p>
+          <div className="artist-container">
+            <div className="artist-card">
+              <div className="artist-img">
+                <img
+                  src={artistInfo.artworkUrl100}
+                  alt={artistInfo.collectionName}
+                />
+              </div>
+              <div className="artist-info">
+                <p className="artist-name" data-testid="artist-name">{ artistInfo.artistName }</p>
+                <p className="album-name" data-testid="album-name">{ artistInfo.collectionName }</p>
               </div>
             </div>
-            <div>
-              <MusicCard
-                musics={ musics }
-              />
-            </div>
+            <MusicCard
+              musics={musics}
+            />
           </div>
         )}
       </div>
@@ -59,6 +60,7 @@ class Album extends React.Component {
 
 Album.propTypes = {
   match: propTypes.shape({
+    url: propTypes.string.isRequired,
     params: propTypes.shape({
       id: propTypes.string.isRequired,
     }).isRequired,

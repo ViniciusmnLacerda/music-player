@@ -1,0 +1,159 @@
+.page-album {
+  height: 100%;
+  width: 100%;
+}
+
+.artist-container {
+  height: calc(100% - 140px);
+  width: 100%;
+}
+
+.artist-card {
+  background-color: #fff;
+  border-radius: 20px 10px 10px 20px;
+  box-shadow: 9px 7px 37px -6px rgb(0 0 0 / 75%);
+  display: flex;
+  height: 160px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 540px;
+  width: 90%;
+}
+
+.artist-img {
+  height: 100%;
+  width: 50%;
+}
+
+.artist-img img {
+  border-radius: 10px 0 0 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.artist-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+.artist-name {
+  font-size: 36px;
+}
+
+.album-name {
+  font-size: 24px;
+}
+
+.musics-container {
+  align-items: center;
+  display: flex;
+  height: 500px;
+  justify-content: center;
+  overflow-y: scroll;
+  padding: 0 20px;
+  width: 100%;
+
+}
+
+.tracklist {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.tracklist div {
+  margin-bottom: 1px solid red;
+}
+
+.track {
+  align-items: center;
+  display: flex;
+  margin-bottom: 1px solid #fff;
+  max-width: 900px;
+}
+
+.track-name {
+  width: 30%;
+}
+
+.track-name p {
+  color: #fff;
+}
+
+.track audio {
+  color: red;
+  width: 55%;
+}
+
+.track label {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+  width: 10%;
+}
+
+.track label input {
+  height: 20px;
+  width: 20px;
+}
+
+@media screen and ( min-width : 940px ) {
+
+  .artist-container {
+    align-items: center;
+    display: flex;
+    height: calc(100% - 140px);
+    justify-items: center;
+    width: 100%;
+
+  }
+
+  .artist-card {
+    border-radius: 20px 20px 10px 10px;
+    flex-direction: column;
+    height: 420px;
+    max-height: 420px;
+    max-width: 315px;
+    width: 20%;
+  }
+
+  .musics-container {
+    height: 90%;
+    width: 60%;
+  }
+
+  .artist-img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .artist-img img {
+    border-radius: 10px 10px 0 0 ;
+    height: 100%;
+    max-height: 420px;
+    max-width: 315px;
+    width: 100%;
+  }
+
+  .artist-info {
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .tracklist {
+    max-width: 950px;
+  }
+
+}

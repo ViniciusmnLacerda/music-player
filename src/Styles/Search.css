@@ -1,0 +1,188 @@
+.search-container {
+  height: 100%;
+  width: 100%;
+}
+
+.search-content {
+  height: calc(100% - 140px);
+  width: 100%;
+}
+
+.search-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 107px;
+}
+
+.search-form label {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.search-form input {
+  border: 0 solid transparent;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 40px;
+  letter-spacing: 2px;
+  padding-left: 10px;
+  transition: all 0.5s ease;
+  width: 100%;
+}
+
+.search-form input:focus {
+  border: 0;
+  box-shadow: 0 5px 15px rgb(108, 99, 255, 50%);
+  outline: 0;
+}
+
+.search-form button {
+  background-color: rgb(92, 92, 92);
+  border: 1px solid rgb(92, 92, 92);
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  height: 35px;
+  letter-spacing: 1px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  transition: all 0.5s ease;
+  width: 115px;
+}
+
+.albuns-container {
+  height: calc(100% - 107px);
+}
+
+.search-form button:hover {
+  background-color: #6c63ff;
+  border: 1px solid #6c63ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.albuns-cards-container {
+  height: 100%;
+  width: 100%;
+}
+
+.albuns-cards-container span {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-size: 35px;
+  height: 40px;
+  justify-content: center;
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cards-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-height: calc(100% - 107px);
+  overflow-y: scroll;
+  padding: 0 10px;
+  padding-top: 30px;
+}
+
+.cards-container .failed-request {
+  color: #fff;
+}
+
+.album-card {
+  background-color: #fff;
+  border-radius: 20px 20px 10px 10px;
+  box-shadow: 9px 7px 37px -6px rgb(0 0 0 / 75%);
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 240px;
+}
+
+.album-card:hover {
+  transform: translateY(-10px);
+}
+
+.album-card .card-img {
+  cursor: pointer;
+  height: 70%;
+}
+
+.card-img a img {
+  border-radius: 10px 10px 0 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  justify-content: space-around;
+}
+
+.card-name {
+  text-align: center;
+}
+
+@media screen and ( min-width : 650px ) {
+
+  .search-form {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .search-form button {
+    border-radius: 5px;
+    height: 40px;
+    width: 120px;
+  }
+
+  .search-form label {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 500px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .search-form input {
+    border: 0 solid transparent;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 40px;
+    letter-spacing: 3px;
+    padding-left: 10px;
+    transition: all 0.5s ease;
+    width: 60%;
+  }
+
+  .albuns-cards-container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cards-container {
+    align-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 80px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1150px;
+  }
+
+}
+
